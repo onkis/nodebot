@@ -26,6 +26,24 @@
       socket.emit('command', 'right');
     }
 
+    document.onkeypress = function (e) {
+        e = e || window.event;
+        // use e.keyCode
+        console.log(e.keyCode)
+        if(e.keyCode === 38){
+          forward();
+        }
+        else if(e.keyCode === 40){
+          stop();
+        }
+        else if(e.keyCode === 37){
+          left();
+        }
+        else if(e.keyCode ===39){
+          right();
+        }
+    };
+
   </script>
   <div >
   <div><button style='width: 500px; height: 60px;' onclick="forward()">Forward</button></div>
