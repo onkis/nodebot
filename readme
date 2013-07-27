@@ -1,3 +1,6 @@
 To get started:
 
 npm install
+
+to run:
+npm start
