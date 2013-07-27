@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title></title>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <script>
+    var socket = io.connect('http://localhost:8080');
+    socket.on('news', function (data) {
+      console.log(data);
+    });
+
+    function forward(){
+      socket.emit('command', 'forward');
+    }
+
+    function stop(){
+      socket.emit('command', 'stop');
+    }
+
+    function left(){
+      socket.emit('command', 'left');
+    }
+
+    function right(){
+      socket.emit('command', 'right');
+    }
+
+  </script>
+  <div >
+  <div><button style='width: 500px; height: 60px;' onclick="forward()">Forward</button></div>
+  <div><button style='width: 500px; height: 60px;' onclick="stop()">Stop</button></div>
+  <div><button style='width: 500px; height: 60px;' onclick="left()">Left</button></div>
+  <div><button style='width: 500px; height: 60px;' onclick="right()">Right</button></div>
+</div>
+</body>
+</html>
